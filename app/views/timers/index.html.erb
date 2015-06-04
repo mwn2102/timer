@@ -1,0 +1,9 @@
+<h1>All Clients and Tasks</h1>
+
+<ul id="timers">
+  <% @timers.each do |t| %>
+    <li>
+      <%= link_to t.client, edit_timer_path(t) %>
+    </li>
+  <% end %>
+</ul>

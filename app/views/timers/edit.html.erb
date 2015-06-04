@@ -1,0 +1,33 @@
+<div class = "container">
+<%= form_for (@timer) do |f| %>
+  <ul>
+  <% @timer.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  
+  <p>
+    <%= f.label :client %><br />
+    <%= f.text_field :client %>
+  </p>
+  <p>
+    <%= f.label :task %><br />
+    <%= f.text_area :task %>
+  </p>
+  
+  <p>
+    <%= f.label :time_spent %><br />
+    <%= f.text_field :time_spent, :placeholder => "00:00:00", id: "test3" %>
+  </p>
+  <p id="result"><%=@decimal%></p>
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>
+
+  <p>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <button id="clear">clear</button>
+  </p>
+</div>
